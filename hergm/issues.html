@@ -1,0 +1,118 @@
+<head>
+<title>R package hergm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Imagetoolbar" content="no">
+
+<style type="text/css">
+/* pushes the page to the full capacity of the viewing area */
+html {height:100%;}
+body {height:100%; margin:0; padding:0;}
+/* prepares the background image to full capacity of the viewing area */
+#bg {position:fixed; top:0; left:0; width:100%; height:100%;}
+/* places the content ontop of the background image */
+#content {position:relative; z-index:1;}
+</style>
+<!--[if IE 6]>
+<style type="text/css">
+/* some css fixes for IE browsers */
+html {overflow-y:hidden;}
+body {overflow-y:auto;}
+#bg {position:absolute; z-index:-1;}
+#content {position:static;}
+</style>
+<![endif]-->
+</head>
+
+<!--<html>
+
+<head>
+
+-->
+
+<body>
+
+<div id="content">
+
+<h3>List of known bugs and issues in R package hergm</h3>
+
+R package hergm is available at <a href="https://CRAN.R-project.org/package=hergm" target="extern" CLASS="Hypertext">https://CRAN.R-project.org/package=hergm</a></font> and has been published in the <a href="https://www.jstatsoft.org/article/view/v085i01" target="extern" CLASS="Hypertext">Journal of Statistical Software</a></font>.
+
+<p>
+
+<h3>hergm version 4.1-3</h3>
+
+<ol>
+
+<li> By mistake, 
+the estimate and standard error of the between-block parameter under method "ml" were reported to be equal,
+because hergm printed the estimate of the between-block parameter twice - thanks to Angelo Mele for alerting us.
+
+<p>
+
+<li> There is a bug in the simulation of directed networks.
+It does not affect the simulation of undirected networks.
+Thanks to Edward McFowland III for alerting us.
+  
+</ol>
+
+<p>
+
+<h3>hergm version 4.1-2</h3>
+
+We changed the default parameterization of method = "ml" from the size-independent parameterization "standard" to the size-dependent parameterization "offset",
+which makes more sense when the sizes of blocks are not equal.
+In addition, we updated the help function along with the summary function to improve clarity.
+Thanks to Francesca Vantaggiato for alerting us to these issues.
+
+<h3>hergm version 4.1-1</h3>
+
+Some additional issues and bugs have been discovered due to the switch from default method = "bayes" to default method = "ml" - thanks to Dave Evenden for alerting me.
+
+<ol>
+
+<li> Bug: If method = "ml" (default) and the number of blocks is 1, the gof method of hergm 4.1-1 generates an error.</li>
+
+<p>
+
+<li> Issues: All of the examples in the help function were designed and tested with method = "bayes" in mind. 
+The switch from default method = "bayes" to default method = "ml" necessitates changes in the examples and help function.
+
+</ol>
+
+<p>
+
+<h3>hergm version 4.1-0</h3>
+
+Due to the split of hergm and mlergm in late 2018, 
+hergm 4.1-0 had some bugs and issues - thanks to Dave Evenden and Jonathan Stewart for alerting me and helping them fix:
+
+<ol>
+
+<li>Bug: If method = "ml" (default), no model term with extension "_ij" or "_ijk" was recognized.</li>
+
+<p>
+
+<li>Bug: If method = "ml" (default) and all nodes belong to the same block, the between-block parameters cannot be estimated and, as a consequence, the goodness-of-fit function gof() returned an error.</li>
+
+<p>
+
+<li>Issue: If method = "ml" (default), the sample size was much larger than needed.</li>
+
+<p>
+
+<li>Issue: hergm exported all functions, which is undesirable.</li>
+
+</ol>
+
+<p>
+
+<h4>hergm version 3.1-1</h3>
+
+Bug: hergm 3.1-0 generated identical seeds in parallel computing when no seeds were supplied.
+
+<p>
+
+</body>
+
+</html>
+
